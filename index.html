@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Singularity Cybersecurity — Securing the Agent Economy</title>
+    <meta name="description" content="AI-powered security research lab. We build and ship security tools for the agent economy — faster than the threats emerge.">
+    <style>
+        :root {
+            --bg: #0a0a0a;
+            --text: #e0e0e0;
+            --accent: #00d4aa;
+            --accent-dim: #00d4aa33;
+            --muted: #888;
+            --card-bg: #141414;
+            --border: #222;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        /* Header */
+        header {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 80px 24px 40px;
+        }
+        .logo {
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 40px;
+        }
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            line-height: 1.15;
+            margin-bottom: 24px;
+            color: #fff;
+        }
+        .subtitle {
+            font-size: 1.25rem;
+            color: var(--muted);
+            max-width: 600px;
+            margin-bottom: 40px;
+        }
+
+        /* Sections */
+        section {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 24px;
+        }
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 24px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border);
+        }
+        p { margin-bottom: 16px; }
+
+        /* Problem */
+        .problem-stat {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 24px 0 32px;
+        }
+        .stat {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 24px;
+        }
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent);
+            display: block;
+        }
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--muted);
+        }
+
+        /* Experiments */
+        .experiment {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 24px;
+            margin-bottom: 16px;
+        }
+        .experiment h3 {
+            color: var(--accent);
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+        .experiment p {
+            color: var(--muted);
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+        .tag {
+            display: inline-block;
+            background: var(--accent-dim);
+            color: var(--accent);
+            font-size: 0.75rem;
+            padding: 2px 8px;
+            border-radius: 4px;
+            margin-right: 6px;
+            margin-top: 8px;
+        }
+
+        /* CTA */
+        .cta-section {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 40px;
+            margin: 40px 0;
+            text-align: center;
+        }
+        .cta-section h2 {
+            border: none;
+            padding: 0;
+        }
+        .cta-section p {
+            color: var(--muted);
+            max-width: 500px;
+            margin: 0 auto 24px;
+        }
+        .cta-form {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .cta-form input {
+            padding: 12px 16px;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            background: var(--bg);
+            color: var(--text);
+            font-size: 1rem;
+            width: 280px;
+        }
+        .cta-form button {
+            padding: 12px 24px;
+            background: var(--accent);
+            color: var(--bg);
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .cta-form button:hover {
+            opacity: 0.9;
+        }
+
+        /* Founder */
+        .founder {
+            display: flex;
+            gap: 24px;
+            align-items: flex-start;
+            margin-top: 16px;
+        }
+        .founder-info h3 {
+            color: #fff;
+            margin-bottom: 4px;
+        }
+        .founder-info p {
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
+        .founder-info a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        /* Footer */
+        footer {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 24px;
+            border-top: 1px solid var(--border);
+            color: var(--muted);
+            font-size: 0.85rem;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            h1 { font-size: 2rem; }
+            header { padding: 40px 16px 24px; }
+            section { padding: 24px 16px; }
+            .problem-stat { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">Singularity Cybersecurity</div>
+    <h1>Securing the agent economy.</h1>
+    <p class="subtitle">We build and ship AI security tools — faster than the threats emerge. Using the same agent technology we protect.</p>
+</header>
+
+<section>
+    <h2>The Problem</h2>
+    <p>Millions of people are deploying AI agents with zero security posture. They're installing unvetted skills that execute on every heartbeat. Running agents on infrastructure with exposed credentials. Browsing the web through agents vulnerable to prompt injection. About to give agents crypto wallets with no financial security.</p>
+    <p>Nobody is building the security layer. We are.</p>
+
+    <div class="problem-stat">
+        <div class="stat">
+            <span class="stat-number">100M+</span>
+            <span class="stat-label">people deploying AI agents in the next 12 months</span>
+        </div>
+        <div class="stat">
+            <span class="stat-number">0</span>
+            <span class="stat-label">dedicated agent security companies exist today</span>
+        </div>
+        <div class="stat">
+            <span class="stat-number">100%</span>
+            <span class="stat-label">reasoning chain hijack rate on default agent configs</span>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2>Singularity Labs — What We're Building</h2>
+    <p>We run continuous experiments — discovering security problems, building tools, measuring adoption, and publishing everything we learn. Every tool is open-source. Install in 60 seconds. Failed experiments become content. Successful experiments become products.</p>
+
+    <div class="experiment">
+        <h3>SkillVet</h3>
+        <p>Scans third-party agent skills for malicious patterns, permission scope violations, and data exfiltration risk. Upload a skill file, get a safety report.</p>
+        <span class="tag">agent security</span>
+        <span class="tag">open source</span>
+        <span class="tag">experiment #1</span>
+    </div>
+
+    <div class="experiment">
+        <h3>AgentArmor</h3>
+        <p>Hardens your agent deployment configuration in one command. Scans for exposed ports, credential leaks, gateway vulnerabilities, and generates an auto-fix script.</p>
+        <span class="tag">deployment hardening</span>
+        <span class="tag">open source</span>
+        <span class="tag">experiment #2</span>
+    </div>
+
+    <div class="experiment">
+        <h3>RedClaw</h3>
+        <p>Automated red-team toolkit for AI agents. Point it at your agent, get a vulnerability report with OWASP Agentic mapping. Find what attackers find first.</p>
+        <span class="tag">red team</span>
+        <span class="tag">open source</span>
+        <span class="tag">experiment #3</span>
+    </div>
+</section>
+
+<section>
+    <h2>Research</h2>
+    <p>Our tools are built on published research, not assumptions.</p>
+
+    <div class="experiment">
+        <h3>Agent Red-Team Framework</h3>
+        <p>7 attack classes tested against AI agents. 100% reasoning chain hijack rate on default configurations. 19 attack scenarios across prompt injection, tool manipulation, and memory poisoning.</p>
+        <span class="tag">published</span>
+    </div>
+
+    <div class="experiment">
+        <h3>RL Agent Vulnerability</h3>
+        <p>162 attacks across 40 trained RL agents. Observation perturbation 20-50x more effective than reward poisoning. Mapped to OWASP Agentic Top 10.</p>
+        <span class="tag">published</span>
+    </div>
+
+    <div class="experiment">
+        <h3>govML</h3>
+        <p>Open-source ML governance framework. 39 templates, 4 profiles, 8+ generators. Contract-driven development with machine-checkable provenance. Used across 7 production projects.</p>
+        <span class="tag">open source</span>
+        <a href="https://github.com/rexcoleman/govML" style="color: var(--accent); text-decoration: none; font-size: 0.85rem; margin-left: 8px;">GitHub &rarr;</a>
+    </div>
+</section>
+
+<section>
+    <div class="cta-section">
+        <h2>Get notified when we launch.</h2>
+        <p>We're shipping open-source agent security tools. Join the list to get early access and shape what we build.</p>
+        <form class="cta-form" action="https://formspree.io/f/PLACEHOLDER" method="POST">
+            <input type="email" name="email" placeholder="your@email.com" required>
+            <input type="text" name="concern" placeholder="What agent security problem do you need solved?" style="width: 340px;">
+            <button type="submit">Get Early Access</button>
+        </form>
+    </div>
+</section>
+
+<section>
+    <h2>Founder</h2>
+    <div class="founder">
+        <div class="founder-info">
+            <h3>Rex Coleman</h3>
+            <p>15 years cybersecurity (FireEye/Mandiant, Fidelis). Founder &amp; CEO of Singularity Cybersecurity (2021). MS Computer Science at Georgia Tech (Machine Learning). CFA Charterholder.</p>
+            <p>Building at the intersection of AI and security. The lab runs on AI agents 24/7 — we use the same technology we're securing.</p>
+            <p><a href="https://rexcoleman.dev">Blog</a> &middot; <a href="https://github.com/rexcoleman">GitHub</a> &middot; <a href="https://linkedin.com/in/rexcoleman">LinkedIn</a></p>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <span>&copy; 2025-2026 Singularity Cybersecurity LLC. All rights reserved.</span>
+    <span>
+        <a href="https://github.com/singularity-cybersecurity">GitHub</a> &middot;
+        <a href="https://rexcoleman.dev">Blog</a> &middot;
+        <a href="mailto:rex@singularitycyber.com">Contact</a>
+    </span>
+</footer>
+
+</body>
+</html>
