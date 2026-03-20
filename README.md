@@ -16,7 +16,7 @@ We build and ship AI security tools — faster than the threats emerge. Using th
 
 - [Agent Red-Team Framework](https://rexcoleman.dev/posts/agent-redteam/) — 7 attack classes, 100% reasoning chain hijack rate
 - [RL Agent Vulnerability](https://rexcoleman.dev/posts/rl-agent-vulnerability/) — 162 attacks across 40 trained agents
-- [govML](https://github.com/rexcoleman/govML) — Open-source ML governance framework
+- [govML](https://rexcoleman.dev/posts/govml-methodology/) — ML governance framework
 
 ## Founder
 
