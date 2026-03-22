@@ -1,5 +1,7 @@
 # Singularity Cybersecurity
 
+> **Note (2026-03-22):** Brand consolidated to [rexcoleman.dev](https://rexcoleman.dev) during cold start (LL-135). All research, content, and trust building happens there. This domain serves as a minimal landing page pointing to the primary site. Singularity Cybersecurity LLC remains the legal/business entity.
+
 Securing the agent economy.
 
 **Website:** [singularitycyber.com](https://singularitycyber.com)
